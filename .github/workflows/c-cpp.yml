@@ -17,3 +17,8 @@ jobs:
       run: gcc test_calculadora.c -o test_calculadora
     - name: execute
       run: ./test_calculadora
+      - name: compile programa principal
+      run: gcc calculadora-3.c -o calculadora-3
+  - name: execute programa principal
+      run: ./calculadora 1 3 4
+
