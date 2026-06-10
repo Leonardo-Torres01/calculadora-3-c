@@ -1,29 +1,19 @@
 #include <stdio.h>
-#include "function_multiplicar.c"
+#include <assert.h> 
 #include "function_divisao.c"
 
 int main()
 {
-    int erros = 0;
+    assert((5 + 5) == 10);
+   
+    assert((20 - 8) == 12);
 
-    if ((5 + 5) != 10) erros++;
+    assert(dividir(15, 3) == 5);
 
-    
-    if ((20 - 8) != 12) erros++;
+    assert(multiplicar(4, 3) == 12);
 
-    
-    if (dividir(15, 3) != 5) erros++;
+    printf("Todos os testes com assert() da calculadora-3-c: PASSOU\n");
 
-    
-    if (multiplicar(4, 3) != 12) erros++;
-
-    if (erros == 0)
-    {
-        printf("Todos os testes da calculadora-3-c: PASSOU\n");
-    }
-    else
-    {
-        printf("Erro nos testes: %d falha(s)\n", erros);
-    }
+    printf("\nFeito por Leonardo Mattoso (https://github.com/Leonardo-Torres01)");
     return 0;
 }
