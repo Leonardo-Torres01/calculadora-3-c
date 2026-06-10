@@ -1,26 +1,41 @@
 #include <stdio.h>
-#include <stdlib.h> 
+#include <stdlib.h>
 #include "function_divisao.c"
 #include "function_multiplicar.c"
 
 int main(int argc, char *argv[])
 {
-   
-    if (argc < 4)
+    int input = 0;
+    int num1 = 0;
+    int num2 = 0;
+
+    if (argc > 1)
     {
-        printf("Erro: Argumentos insuficientes.\n");
-        printf("Uso correto: .\\calculadora [operacao 1:soma, 2:subtracao, 3:divisao, 4:multiplicar] [numero1] [numero2]\n");
-        printf("Exemplo: .\\calculadora 1 3 4\n");
-        printf("\nFeito por Leonardo Mattoso (https://github.com/Leonardo-Torres01)");
-        return 1;
+        if (argc < 4)
+        {
+            printf("Erro: Argumentos insuficientes na linha de comando.\n");
+            printf("Uso: .\\calculadora [operacao] [numero1] [numero2]\n");
+            return 1;
+        }
+        input = atoi(argv[1]);
+        num1 = atoi(argv[2]);
+        num2 = atoi(argv[3]);
     }
 
-    
-    int input = atoi(argv[1]);
-    int num1 = atoi(argv[2]);
-    int num2 = atoi(argv[3]);
-    
-
+    else
+    {
+        printf("Calculadora\n\n");
+        printf("1 - Soma\n");
+        printf("2 - Subtracao\n");
+        printf("3 - Divisao\n");
+        printf("4 - Multiplicacao\n\n");
+        scanf("%d", &input);
+        
+        printf("\n\nDigite o primeiro numero: ");
+        scanf("%d", &num1);
+        printf("Digite o segundo numero: ");
+        scanf("%d", &num2);
+    }
     switch(input)
     {
         case 1:
